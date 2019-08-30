@@ -23,12 +23,14 @@
                     <p>Slider</p>
                 </a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="./tables.html">
+
+            <li class="nav-item {{Request::is('admin/category*') ? 'active' : ''}} ">
+                <a class="nav-link" href="{{route('category.index')}}">
                     <i class="material-icons">content_paste</i>
-                    <p>Table List</p>
+                    <p>Category</p>
                 </a>
             </li>
+
             <li class="nav-item ">
                 <a class="nav-link" href="./typography.html">
                     <i class="material-icons">library_books</i>
