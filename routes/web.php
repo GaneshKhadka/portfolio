@@ -26,6 +26,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth','namespace' => 'admin'
    Route::get('dashboard','DashboardController@index')->name('admin.dashboard');
    Route::resource('slider','SliderController');
    Route::resource('category','CategoryController');
+   Route::resource('project','ProjectController');
 });
 
-//video 10 completed
+//video 13 completed
