@@ -38,7 +38,8 @@
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $project ->name }}</td>
-                                            <td>{{ $project ->image }}</td>
+                                            {{--<td>{{ $project ->image }}</td>--}}
+                                            <td><img class="img-responsive img-thumbnail" src="{{asset('uploads/project/'.$project->image)}}" style="height: 100px; width: 100px;" alt=""></td>
                                             <td>{{ $project ->category->name }}</td>
                                             <td>{{ $project ->description }}</td>
                                             <td>{{ $project ->created_at }}</td>

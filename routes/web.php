@@ -16,6 +16,7 @@
 //});
 
 Route::get('/', 'HomeController@index')->name('welcome');
+Route::post('/requestproject','RequestprojectController@project')->name('request.project');
 
 Auth::routes();
 
@@ -29,4 +30,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth','namespace' => 'admin'
    Route::resource('project','ProjectController');
 });
 
-//video 13 completed
+//video 17 completed

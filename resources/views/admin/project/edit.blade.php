@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Category')
+@section('title','Project')
 
 @push('css')
 
@@ -16,18 +16,47 @@
 
                     <div class="card">
                         <div class="card-header card-header-primary">
-                            <h4 class="card-title ">Edit Category</h4>
+                            <h4 class="card-title ">Edit Project</h4>
                         </div>
                         <div class="card-body">
-                             <form method="POST" action="{{route('category.update',$category->id)}}">
+                             <form method="POST" action="{{route('project.update',$project->id)}}" enctype="multipart/form-data">
                                  @csrf
                                  @method('PUT')
                                  <div class="row">
                                      <div class="col-md-12">
                                          <div class="form-group">
-                                             <label class="bmd-label-floating">Name</label>
-                                             <input type="text" class="form-control" name="name" value="{{$category->name}}">
+                                             <label class="bmd-label-floating">Category</label>
+                                             <select class="form-control" name="category">
+                                                 @foreach($categories as $category)
+                                                     <option {{ $category->id == $project->category->id ? 'selected':'' }} value="{{ $category->id }}">{{ $category->name }}</option>
+                                                 @endforeach
+                                             </select>
                                          </div>
+                                     </div>
+                                 </div>
+
+                                 <div class="row">
+                                     <div class="col-md-12">
+                                         <div class="form-group">
+                                             <label class="bmd-label-floating">Name</label>
+                                             <input type="text" class="form-control" name="name" value="{{$project->name}}">
+                                         </div>
+                                     </div>
+                                 </div>
+
+                                 <div class="row">
+                                     <div class="col-md-12">
+                                         <div class="form-group">
+                                             <label class="bmd-label-floating">Description</label>
+                                             <textarea class="form-control" name="description">{{$project->description}}</textarea>
+                                         </div>
+                                     </div>
+                                 </div>
+
+                                 <div class="row">
+                                     <div class="col-md-12">
+                                         <label class="bmd-label-floating">Image</label>
+                                         <input type="file" name="image">
                                      </div>
                                  </div>
 

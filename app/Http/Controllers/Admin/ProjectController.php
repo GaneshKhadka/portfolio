@@ -67,7 +67,7 @@ class ProjectController extends Controller
         $project -> category_id = $request -> category;
         $project -> name = $request -> name;
         $project -> description = $request -> description;
-        $project -> $image = $imagename;
+        $project -> image = $imagename;
         $project -> save();
         return redirect()->route('project.index')->with('successMsg','Project name added Successfully !!');
 
@@ -92,7 +92,9 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $project = Project::find($id);
+        $categories = Category::all();
+        return view('admin.project.edit',compact('project','categories'));
     }
 
     /**
@@ -104,7 +106,35 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this -> validate($request,[
+            'category' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'mimes:jpeg,jpg,bmp,png',
+        ]);
+        $project = Project::find($id);
+        $image = $request->file('image');
+        $slug = Str::slug($request->name);
+        if(isset($image))
+        {
+            $currentDate = Carbon::now()->toDateString();
+            $imagename = $slug.'-'.$currentDate.'-'. uniqid() .'.'. $image->getClientOriginalExtension();
+
+            if(!file_exists('uploads/project'))
+            {
+                mkdir('uploads/project',0777,true);
+            }
+            unlink('uploads/project/'.$project->image);
+            $image->move('uploads/project',$imagename);
+        }else{
+            $imagename = $project->image;
+        }
+        $project -> category_id = $request -> category;
+        $project -> name = $request -> name;
+        $project -> description = $request -> description;
+        $project -> image = $imagename;
+        $project -> save();
+        return redirect()->route('project.index')->with('successMsg','Project name updated Successfully !!');
     }
 
     /**
@@ -115,6 +145,12 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $project = Project::find($id);
+        if (file_exists('uploads/project/'.$project->image))
+        {
+            unlink('uploads/project/'.$project->image);
+        }
+        $project -> delete();
+        return redirect()->back()->with('successMsg','Project name deleted successfully !!');
     }
 }
