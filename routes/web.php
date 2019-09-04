@@ -17,6 +17,7 @@
 
 Route::get('/', 'HomeController@index')->name('welcome');
 Route::post('/requestproject','RequestprojectController@project')->name('request.project');
+Route::post('/contact','ContactController@sendMessage')->name('contact.send');
 
 Auth::routes();
 
@@ -28,6 +29,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth','namespace' => 'admin'
    Route::resource('slider','SliderController');
    Route::resource('category','CategoryController');
    Route::resource('project','ProjectController');
+
+   Route::get('requestproject','RequestprojectController@index')->name('requestproject.index');
+   Route::post('requestproject/{id}','RequestprojectController@status')->name('requestproject.status');
+   Route::delete('requestproject/{id}','RequestprojectController@destroy')->name('requestproject.destroy');
+
+   Route::get('contact','ContactController@index')->name('contact.index');
+   Route::get('contact/{id}','ContactController@show')->name('contact.show');
+   Route::delete('contact/{id}','ContactController@destroy')->name('contact.destroy');
 });
 
-//video 17 completed
+//video 23 6.7sec completed
