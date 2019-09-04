@@ -39,4 +39,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth','namespace' => 'admin'
    Route::delete('contact/{id}','ContactController@destroy')->name('contact.destroy');
 });
 
-//video 23 6.7sec completed
+//video 24 completed
