@@ -139,7 +139,7 @@
 </section> <!-- /#about -->
 
 
-<!--==  7. Afordable Pricing  ==-->
+<!--==  7. Portfolio  ==-->
 <section id="portfolio" class="portfolio">
     <div id="w">
         <div class="pricing-filter">
@@ -325,9 +325,17 @@
     </div>
 </section>
 
-<div class="container-fluid">
-    <div class="row">
-        <div id="map-canvas"></div>
+{{--<div class="container-fluid">--}}
+    {{--<div class="row">--}}
+        {{--<div id="map-canvas"></div>--}}
+    {{--</div>--}}
+{{--</div>--}}
+<div class="google-map-area">
+    <!--  Map Section -->
+    <div id="contacts" class="map-area">
+        <div  style="width:100%;height:485px;filter: grayscale(100%);-webkit-filter: grayscale(100%);">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5943.694205412088!2d83.53441297982995!3d27.651086723378974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399683ba6d7cdc79%3A0xb0796df18000210e!2sDevdaha+Medical+College+%26+Research+Institute+Pvt.+Ltd!5e0!3m2!1sen!2snp!4v1552828033998" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
     </div>
 </div>
 

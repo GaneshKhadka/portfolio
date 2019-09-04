@@ -59,4 +59,5 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 .flex-control-nav li:first-child {margin: 0;}
 .flex-control-nav li a {width: 13px; height: 13px; border-radius: 50%; display: block; background-color: #fff; margin-right: 10px; cursor: pointer; text-indent: -9999px;}
 .flex-control-nav li a:hover {/*background-position: 0 -13px;*/ background-color: #8bc34a;}
+.flex-control-nav li a:hover {/*background-position: 0 -13px;*/ background-color: #8bc34a;}
 .flex-control-nav li a.active {background-color: #5c9233;/*background-position: 0 -26px; */cursor: default;}
