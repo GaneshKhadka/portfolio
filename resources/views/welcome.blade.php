@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="shortcut icon" href="images/star.png" type="favicon/ico" /> -->
 
-    <title>Ganesh Khadka-Web developer from Nepal</title>
+    <title>Ganesh Khadka - Web developer from Nepal</title>
 
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/font-awesome.min.css')}}">
@@ -41,28 +41,28 @@
         });
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script>
-        function initialize() {
-            var mapCanvas = document.getElementById('map-canvas');
-            var mapOptions = {
-                center: new google.maps.LatLng(24.909439, 91.833800),
-                zoom: 16,
-                scrollwheel: false,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            }
-            var map = new google.maps.Map(mapCanvas, mapOptions)
+    {{--<script src="https://maps.googleapis.com/maps/api/js"></script>--}}
+    {{--<script>--}}
+        {{--function initialize() {--}}
+            {{--var mapCanvas = document.getElementById('map-canvas');--}}
+            {{--var mapOptions = {--}}
+                {{--center: new google.maps.LatLng(24.909439, 91.833800),--}}
+                {{--zoom: 16,--}}
+                {{--scrollwheel: false,--}}
+                {{--mapTypeId: google.maps.MapTypeId.ROADMAP--}}
+            {{--}--}}
+            {{--var map = new google.maps.Map(mapCanvas, mapOptions)--}}
 
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(24.909439, 91.833800),
-                title:"Mamma's Kitchen Restaurant"
-            });
+            {{--var marker = new google.maps.Marker({--}}
+                {{--position: new google.maps.LatLng(24.909439, 91.833800),--}}
+                {{--title:"Mamma's Kitchen Restaurant"--}}
+            {{--});--}}
 
-            // To add the marker to the map, call setMap();
-            marker.setMap(map);
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+            {{--// To add the marker to the map, call setMap();--}}
+            {{--marker.setMap(map);--}}
+        {{--}--}}
+        {{--google.maps.event.addDomListener(window, 'load', initialize);--}}
+    {{--</script>--}}
 
 
 </head>
@@ -269,21 +269,9 @@
 
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="opening-time">
-                            <h3 class="opening-time-title">Hours</h3>
-                            <p>Mon to Fri: 7:30 AM - 11:30 AM</p>
-                            <p>Sat & Sun: 8:00 AM - 9:00 AM</p>
-
-                            <div class="launch">
-                                <h4>Lunch</h4>
-                                <p>Mon to Fri: 12:00 PM - 5:00 PM</p>
-                            </div>
-
-                            <div class="dinner">
-                                <h4>Dinner</h4>
-                                <p>Mon to Sat: 6:00 PM - 1:00 AM</p>
-                                <p>Sun: 5:30 PM - 12:00 AM</p>
-                            </div>
-                        </div>
+                            <h3 class="opening-time-title">Hire me</h3>
+                            <li>Available for part-time job</li>
+                            <li>Available for team work</li>
                     </div>
                 </div>
 
@@ -330,14 +318,20 @@
         {{--<div id="map-canvas"></div>--}}
     {{--</div>--}}
 {{--</div>--}}
-<div class="google-map-area">
-    <!--  Map Section -->
-    <div id="contacts" class="map-area">
-        <div  style="width:100%;height:485px;filter: grayscale(100%);-webkit-filter: grayscale(100%);">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5943.694205412088!2d83.53441297982995!3d27.651086723378974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399683ba6d7cdc79%3A0xb0796df18000210e!2sDevdaha+Medical+College+%26+Research+Institute+Pvt.+Ltd!5e0!3m2!1sen!2snp!4v1552828033998" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-    </div>
+{{--<div class="google-map-area">--}}
+    {{--<!--  Map Section -->--}}
+    {{--<div id="contacts" class="map-area">--}}
+        {{--<div  style="width:100%;height:485px;filter: grayscale(100%);-webkit-filter: grayscale(100%);">--}}
+            {{--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5943.694205412088!2d83.53441297982995!3d27.651086723378974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399683ba6d7cdc79%3A0xb0796df18000210e!2sDevdaha+Medical+College+%26+Research+Institute+Pvt.+Ltd!5e0!3m2!1sen!2snp!4v1552828033998" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</div>--}}
+
+<div style="width: 100%"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=27.64618115,83.36609180272863&amp;q=Khadwa%20bandai%2CHirapur+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+        <a href="https://www.maps.ie/coordinates.html">find my coordinates</a>
+    </iframe>
 </div>
+<br />
 
 
 
