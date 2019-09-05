@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Notifications\RequestprojectConfirmed;
 use App\Requestproject;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Notification;
 
 class RequestprojectController extends Controller
 {
@@ -20,6 +22,10 @@ class RequestprojectController extends Controller
         $requestproject = Requestproject::find($id);
         $requestproject ->status = true;
         $requestproject->save();
+//        for mail confirmation
+        Notification::route('mail', $requestproject->email)
+            ->notify(new RequestprojectConfirmed());
+
         Toastr::success('Project request successfully confirmed!','Success',["positionClass" => "toast-top-center"]);
         return redirect()->back();
     }
